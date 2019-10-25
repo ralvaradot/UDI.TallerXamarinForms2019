@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UDI.XamApp.Views.LoginPage"
+             xmlns:vm="clr-namespace:UDI.XamApp.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Entry Placeholder="Ingrese el usuario"
+                       Text="{Binding Usuario, Mode=TwoWay}"
+                      Grid.Row="2" />
+
+                <Entry Placeholder="Ingrese su Clave"
+                       IsPassword="True"
+                       Text="{Binding Password, Mode=TwoWay}"
+                       Grid.Row="3"/>
+
+                <Button Text="Ingresar" 
+                        BorderWidth="20"
+                        CornerRadius="40"
+                        TextColor="White"
+                        BackgroundColor="DarkBlue"
+                        Grid.Row="4"
+                        Command="{Binding LoginUser}"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

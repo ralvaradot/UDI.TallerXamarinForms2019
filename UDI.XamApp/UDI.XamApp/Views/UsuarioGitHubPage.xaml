@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UDI.XamApp.Views.UsuarioGitHubPage"
+             xmlns:vm="clr-namespace:UDI.XamApp.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:UsuarioGitHubViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" >
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Usuario GH " VerticalTextAlignment="Center"
+                       TextColor="DarkBlue"/>
+                <Entry Placeholder="Usuario a buscar" Text="{Binding UserSearch, Mode=TwoWay}" />
+                <Button Text="Buscar" Command="{Binding BuscarUserCommand}"
+                        BackgroundColor="DarkCyan"
+                        CornerRadius="20" BorderWidth="40"
+                        TextColor="White"/>
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Login: " Grid.Row="0" Grid.Column="0"></Label>
+                <Label  Text="{Binding Login, Mode=TwoWay}"
+                        Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Url: " Grid.Row="1" Grid.Column="0"></Label>
+                <Label Text="{Binding Url, Mode=TwoWay}"
+                        Grid.Row="1" Grid.Column="1"></Label>
+
+                <Label Text="Nombre: " Grid.Row="2" Grid.Column="0"></Label>
+                <Label Text="{Binding Nombre, Mode=TwoWay}"
+                        Grid.Row="2" Grid.Column="1"></Label>
+                
+                <Label Text="Empresa: " Grid.Row="3" Grid.Column="0"></Label>
+                <Label Text="{Binding Empresa, Mode=TwoWay}"
+                        Grid.Row="3" Grid.Column="1"></Label>
+                
+                <Label Text="Ubicacion: " Grid.Row="4" Grid.Column="0"></Label>
+                <Label Text="{Binding Ubicacion, Mode=TwoWay}"
+                        Grid.Row="4" Grid.Column="1"></Label>
+                
+                <Label Text="Biografia: " Grid.Row="5" Grid.Column="0"></Label>
+                <Label Text="{Binding Biografia, Mode=TwoWay}"
+                        Grid.Row="5" Grid.Column="1"></Label>
+                
+                <Label Text="Actualizado: " Grid.Row="6" Grid.Column="0"></Label>
+                <Label Text="{Binding Actualizado, Mode=TwoWay}"
+                        Grid.Row="6" Grid.Column="1"></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
