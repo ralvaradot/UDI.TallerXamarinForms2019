@@ -17,6 +17,8 @@ namespace UDI.XamApp.ViewModels
         public Command BuscarUserCommand { get; set; }
 
         // datos a mostrar
+        // El metodo SetProperty de BaseViewModel es el que permite el
+        // Binding con MVVM (Model, View, ViewModel)
         private string _Login;
         public string Login { get { return _Login; } set { SetProperty(ref _Login, value); } }
 
