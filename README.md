@@ -143,12 +143,15 @@ Y Ejecutamos nuestra aplicación nuevamente. Ya podemos ver el menu de la aplicac
 # Creando las opciones de Registro y Login 
 
 Para nuestra opción de login necesitamos un Modelo que llamaremos Usuario, crearemos esta clase en la carpeta Models. Damos clic derecho, Add, Class…
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img021.png)
 
 Esto nos abre la ventana para crear una nueva clase en esta carpeta.
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img022.png)
 
 Damos clic al boton Add y nos lleva a la ventana de codigo de C#. La clase va a tener el siguiente codigo:
+
 ~~~
 namespace UDI.XamApp.Models
 {
@@ -164,10 +167,13 @@ namespace UDI.XamApp.Models
 ~~~
 
 Ahora vamos a crear la Vista, para esto, damos clic derecho en la carpeta Views, Add, New Item…
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img023.png)
 
 Nos muestra la siguiente pantalla:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img024.png)
+
 Selecionamos Xamarin forms, Content Page, damos el nombre LoginPage y damos clic al boton Add.
 
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img025.png)
@@ -284,6 +290,7 @@ namespace UDI.XamApp.ViewModels
 Creamos 3 propiedades, usuario que es para la captura del nombre, password para la clave. y una Comando que responda al evento Tap del boton Ingresar. En el constructor inicializamos la propiedad Title y el Command. Creamos el método que ejecuta el comando y el codigo para este método.
 
 La ventana de Visual Studio se verá asi:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img027.png)
 
 Ahora crearemos una nueva vista para la opción Register, recordemos que el nombre que le colocamos es RegisterPage, entonces clic derecho en la carpeta Views, Add, new Item seguimos los mismos pasos para crear LoginPage.
@@ -329,9 +336,11 @@ La Vista RegisterPage Queda de la siguiente manera:
 ~~~
 
 Se verá de la siguiente manera:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img028.png)
 
 Ahora crearemos en la carpeta de ViewModels, la clase RegisterViewModel, que tendrá el siguiente codigo:
+
 ~~~
 using System;
 using System.Collections.Generic;
@@ -384,6 +393,7 @@ namespace UDI.XamApp.ViewModels
 ~~~
 
 Si ejecutamos nuestra aplicación ahora se vera de la siguiente manera:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img029.png) 
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img030.png)
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img031.png)
@@ -400,9 +410,11 @@ Si ejecutamos nuestra aplicación ahora se vera de la siguiente manera:
 Para esto utilizamos la clase HttpClient, con la cual nos conectamos al servicio.
 
 El primer ejemplo de consumo de API REST es el servicio que expone GitHub para la informacion del usuario registrado.
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img037.png)
 
 Agregamos dos opciones a la enumeración de las opciones, luego vamos al MainPage.xaml.cs, al método NavigateFromMenu, y alli adicionamos el codigo siguiente:
+
 ~~~
     case (int)MenuItemType.UsuarioGitHub:
         MenuPages.Add(id, new NavigationPage(new UsuarioGitHubPage()));
@@ -415,6 +427,7 @@ Agregamos dos opciones a la enumeración de las opciones, luego vamos al MainPage
 
 
 Luego debemos ir al MenuPage.xaml.cs y modificar para que quede de la siguiente manera:
+
 ~~~
 public MenuPage()
         {
@@ -442,6 +455,7 @@ Ahora vamos a la carpeta Views en el Explorador de Soluciones, clic derecho, Add
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img040.png)
 
 Adicionamos el namespace y la sección del bindingcontext de la página:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img041.png)
 
 Como aun no hemos creado el ViewModel nos aparece un error. Vamos a la carpeta ViewModels en el explorador de la solución, clic derecho, Add, Class…, damos el nombre de la clase UsuarioGitHubViewModel y el boton Add.
@@ -461,6 +475,7 @@ En el espacio en blanco copiamos el objeto resultado del servicio de GitHub.
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img044.png)
 
 Damos clic al boton de Generate, y nos genera la o las clases que conformarían este objeto en formato Json.
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img045.png)
 
 Ahora regresamos a Visual Studio, y en la carpeta de Models creamos una clase que llamaremos GithubUser. En esta clase copiaremos la definición del objeto que nos entregó esta página web.
@@ -672,6 +687,7 @@ Luego creamos las propiedades para los datos a mostrar en el formulario, estas p
 
 
 Cada una de estas propiedades debe seguir el siguiente esquema en su definición:
+
 ~~~
 private string _Login;
 public string Login { get { return _Login; } set { SetProperty(ref _Login, value); } }
@@ -748,6 +764,7 @@ namespace UDI.XamApp.ViewModels
 ~~~
 
 Ahora ejecutamos la aplicación y vemos las pantallas de los resultados de la ejecución de la aplicación:
+
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img047.png)
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img048.png)
 ![](https://raw.githubusercontent.com/ralvaradot/UDI.TallerXamarinForms2019/master/Assets/T1Img049.png)
